@@ -1,0 +1,57 @@
+<Application>
+	<ClockPreviewType>CC</ClockPreviewType>
+	<ClockType>Flying</ClockType>
+	<PackageName>Ovation</PackageName>
+	<DisplayName>tuckermurray@ovation.com</DisplayName>
+	<Description>et eiusmod</Description>
+	<Settings>
+		<Item>
+			<setting_type>American Samoa</setting_type>
+			<title_type>Idaho</title_type>
+			<name>Mckay Compton</name>
+			<Title>Whitehaven</Title>
+			<Selection>
+				<default>5ec82f5ea56568b28d01e601</default>
+				<id>fd84f762-5009-4b7f-9cbd-87b995e5575e</id>
+				<DisplayContent>
+					<type>5ec82f5e5cbd88ab564aab81</type>
+					<content>aliqua ullamco</content>
+				</DisplayContent>
+				<DisplayContent>
+					<type>5ec82f5ea56568b28d01e601</type>
+					<content>aliquip enim</content>
+				</DisplayContent>
+			</Selection>
+      <Selection>
+				<default>5ec82f5ea56568b28d01e601</default>
+				<id>fd84f762-5009-4b7f-9cbd-87b995e5575e</id>
+				<DisplayContent>
+					<type>5ec82f5e5cbd88ab564aab81</type>
+					<content>aliqua ullamco</content>
+				</DisplayContent>
+				<DisplayContent>
+					<type>5ec82f5ea56568b28d01e601</type>
+					<content>aliquip enim</content>
+				</DisplayContent>
+			</Selection>
+		</Item>
+		<Item>
+			<setting_type>Brazil</setting_type>
+			<title_type>Northern Mariana Islands</title_type>
+			<name>Smith Flowers</name>
+			<Title>Smock</Title>
+			<Selection>
+				<default>5ec82f5ecb6078a67a0f63f9</default>
+				<id>cc7e39af-644b-42fa-a9fc-aafbd5778b98</id>
+				<DisplayContent>
+					<type>5ec82f5e4bb465fa92b229fd</type>
+					<content>ipsum consequat</content>
+				</DisplayContent>
+				<DisplayContent>
+					<type>5ec82f5e8045987e3d6a44d0</type>
+					<content>veniam nostrud</content>
+				</DisplayContent>
+			</Selection>
+		</Item>
+	</Settings>
+</Application>

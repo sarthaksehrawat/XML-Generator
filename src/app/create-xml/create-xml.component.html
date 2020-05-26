@@ -1,0 +1,57 @@
+<h1 style="font-family: sans-serif;" class="mb-3">XML Generator</h1>
+<form [formGroup]="xmlForm" (ngSubmit)="onSubmit()" class="xmlForm">
+    <div class="form-header col-md" formGroupName="Application">
+        <label>Package Name<input formControlName="PackageName" placeholder="Package Name"></label>
+        <label>Display Name<input formControlName="DisplayName" placeholder="Display Name"></label>
+        <label>Clock Type<input formControlName="ClockType" placeholder="Clock Type"></label>
+        <label>Description<input formControlName="Description" placeholder="Description"></label>
+        <label>Clock Preview Type<input formControlName="ClockPreviewType" placeholder="Clock Preview Type"></label>
+        
+        <div formGroupName="Settings" class="col-md">
+            <button type="button" class="btn btn-primary btn-lg" id="addItemBtn" (click)="addItem()">Add Item</button>
+            <div formArrayName="Item">
+                <div class="Item" *ngFor="let x of xmlForm['controls'].Application['controls'].Settings['controls'].Item['controls']; let ix=index">
+                    <div formGroupName="{{ ix }}" class="Item col-md">
+                        <h2 style="font-family: sans-serif;" class="mb-3">Item {{ix+1}}</h2>
+                        
+                        <label>Setting Type<input required="true" type="text" formControlName="setting_type" placeholder="Setting Type"></label>
+                        <label>Title Type<input type="text" formControlName="title_type" placeholder="Title Type"></label>
+                        <label>Name<input type="text" formControlName="name" placeholder="Name"></label>
+                        <label>Title<input type="text" formControlName="Title" placeholder="Title"></label>
+
+                        <button type="button" class="btn btn-primary btn-lg" id="addSelectionBtn" (click)="addSelection(ix)">Add Selection</button>
+                        
+                        <div formArrayName="Selection">
+                            <div class="Selection" *ngFor="let y of x['controls'].Selection['controls']; let iy=index">
+                                <div formGroupName="{{ iy }}" class="Selection col-md">
+                                    <h3 style="font-family: sans-serif;">Selection {{iy+1}}</h3>
+
+                                    <label>Default<input type="text" formControlName="default" placeholder="Default"></label>
+                                    <label>ID<input type="text" formControlName="id" placeholder="id"></label>
+
+                                    <button type="button" class="btn btn-primary btn-lg" id="addDisplayBtn" (click)="addDisplayContent(ix,iy)">Add DisplayContent</button>
+                                    <div formArrayName="DisplayContent">
+                                        <div class="DisplayContent" *ngFor="let z of y['controls'].DisplayContent['controls']; let iz=index">
+                                            <div formGroupName="{{ iz }}" class="DisplayContent col-md">
+                                                <h4 style="font-family: sans-serif;">DisplayContent {{iz+1}}</h4>
+                                                
+                                                <label>Type<input type="text" formControlName="type" placeholder="type"></label>
+                                                <label>Content<input type="text" formControlName="content" placeholder="Content"></label>
+                                                
+                                                <button type="button" class="btn btn-primary btn-lg" id="deleteDisplayBtn" (click)="deleteDisplayContent(ix,iy,iz)">Delete DisplayContent</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-primary btn-lg" id="deleteSelectionBtn" (click)="deleteSelection(ix,iy)">Delete Selection</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-lg" id="deleteItemBtn" (click)="deleteItem(ix)">Delete Item</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button id="submitBtn" class="btn btn-info btn-lg btn-block" type="submit">Generate XML</button>
+</form>
+

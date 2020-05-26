@@ -1,0 +1,19 @@
+.delete {
+  top: 25px;
+  right: 15px;
+}
+
+.field-sets {
+  margin-bottom: 20px;
+  border-color: #000 !important;
+}
+
+.legend-with-bordr {
+  border-style: none;
+  border-width: 0;
+  margin-bottom: 0;
+  font-size: 1rem;
+  line-height: 31px;
+  padding: 0 14px;
+  border: 1px solid#000;
+}

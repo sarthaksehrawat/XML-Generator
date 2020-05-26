@@ -1,0 +1,40 @@
+.delete {
+  top: 15px;
+  right: 10px;
+}
+
+.delete-display-content {
+  top: 10px;
+  right: 5px;
+}
+
+.field-sets {
+  margin-bottom: 20px;
+  border-color: #777 !important;
+}
+.field-sets-display-content {
+  margin-bottom: 10px;
+  border-color: #aaa !important;
+}
+
+.field-sets:first-child,
+.field-sets-display-content:first-of-type {
+  margin-top: 20px;
+}
+
+.legend-with-bordr,
+.legend-with-bordr-display-content {
+  border-style: none;
+  border-width: 0;
+  margin-bottom: 0;
+  font-size: 0.85rem;
+  line-height: 23px;
+  padding: 0 14px;
+  border: 1px solid #777;
+}
+
+.legend-with-bordr-display-content {
+  font-size: 0.75rem;
+  line-height: 20px;
+  border: 1px solid #aaa;
+}

@@ -1,0 +1,17 @@
+<fieldset class="border p-4 field-sets mb-5">
+  <legend  class="w-auto legend-with-bordr">Root Tags</legend>
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let item of rootParamsExceptSettings | keyvalue">
+      <label for="{{item.key}}">{{item.key}}</label>
+      <input
+        type="text"
+        class="form-control"
+        id="{{item.key}}"
+        name="{{item.key}}"
+        placeholder="{{item.key}}"
+        value="{{item.value}}"
+        (change)="dataChanged($event)"
+      >
+    </div>
+  </div>
+</fieldset>

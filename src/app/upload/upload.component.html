@@ -1,0 +1,10 @@
+<div class="py-5 text-center">
+  <button
+    class="btn btn-primary btn-lg"
+    type="button"
+    (click)="uploadAction()"
+  >
+    Upload XML
+  </button>
+  <input type="file" id="file-selector" hidden (change)="onFileChange($event)">
+</div>

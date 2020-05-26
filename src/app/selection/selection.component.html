@@ -1,0 +1,82 @@
+<fieldset class="border p-4 field-sets position-relative">
+  <legend class="w-auto legend-with-bordr">Selection</legend>
+  <button type="button" class="close position-absolute delete" (click)="deleteSelectionHandler()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <div class="row mb-3">
+    <div class="col-md-6 input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">default</div>
+      </div>
+      <input
+        type="text"
+        class="form-control"
+        id="default"
+        name="default"
+        placeholder="default"
+        value="{{ default }}"
+        (change)="dataChanged($event)"
+      />
+    </div>
+    <div class="col-md-6 input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">id</div>
+      </div>
+      <input
+        type="text"
+        class="form-control"
+        id="id"
+        name="id"
+        placeholder="id"
+        value="{{ id }}"
+        (change)="dataChanged($event)"
+      />
+    </div>
+  </div>
+  <button type="button" class="btn btn-success btn-sm right" (click)="addDisplayContent()">
+    Add Display Content
+  </button>
+  <fieldset
+    class="border p-4 field-sets-display-content position-relative"
+    *ngFor="let contentToDisplay of displayContent; let contentIdx = index"
+  >
+    <legend class="w-auto legend-with-bordr-display-content">Display Content</legend>
+    <button
+      type="button"
+      class="close position-absolute delete-display-content"
+      (click)="deleteDisplayContent(contentIdx)"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="row">
+      <div class="col-md-6 input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">type</div>
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          id="type"
+          name="type"
+          placeholder="type"
+          value="{{ contentToDisplay.type }}"
+          (change)="displayContentChange($event, contentIdx)"
+        />
+      </div>
+      <div class="col-md-6 input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">content</div>
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          id="content"
+          name="content"
+          placeholder="content"
+          value="{{ contentToDisplay.content }}"
+          (change)="displayContentChange($event, contentIdx)"
+        />
+      </div>
+    </div>
+  </fieldset>
+</fieldset>

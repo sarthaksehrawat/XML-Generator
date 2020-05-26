@@ -1,0 +1,120 @@
+.Item, .Selection, .DisplayContent, p{
+    margin: 10px;
+}
+   
+input{
+     margin: 10px;
+     display:block;
+     width:50%;
+     border: 2px solid #2980B9;
+     padding:.5rem;
+     font-size:18px;
+     border-radius:5px;
+}
+
+label{
+    display:block;
+    padding:1rem 0 .25rem;
+    font-size:18px;
+    font: sans-serif;
+    font-family: sans-serif;
+}
+
+.xmlForm{
+    margin: 2rem auto;
+    border: 2px solid black;
+    padding: 2 rem;
+    border-radius: 5px;
+}
+
+.Item{
+    margin: 10px;
+    padding:0.5rem;
+    border: #95eef0 solid 1px;
+    background-color:#95eef0;
+}
+
+.Selection{
+    margin: 10px;
+    padding:0.5rem;
+    border:#95a1f0 solid 1px;
+    background-color:#95a1f0;
+}
+
+.DisplayContent{
+    margin: 10px;
+    padding:0.5rem;
+    border:#f095e5 solid 1px;
+    background-color:#f095e5;
+}
+
+#submitBtn{
+    background:green;
+    border:0;
+    padding: 0.5rem;
+    color:white;
+    margin:1rem 0;
+    width:auto;
+    cursor:pointer;
+}
+
+#addItemBtn{
+    background: #343050;
+    border:0;
+    padding: 0.5rem;
+    color:white;
+    margin:1rem 0;
+    width:auto;
+    cursor:pointer;
+}
+
+#addSelectionBtn{
+    background: #343050;
+    border:0;
+    padding: 0.5rem;
+    color:white;
+    margin:1rem 0;
+    width:auto;
+    cursor:pointer;
+}
+
+#addDisplayBtn{
+    background: #343050;
+    border:0;
+    padding: 0.5rem;
+    color:white;
+    margin:1rem 0;
+    width:auto;
+    cursor:pointer;
+}
+
+#deleteItemBtn{
+    margin-left: 2px;
+    background: #343050;
+    border:0;
+    padding: 0.5rem;
+    color:white;
+    margin:1rem 0;
+    width:auto;
+    cursor:pointer;
+}
+
+#deleteSelectionBtn{
+    background: #343050;
+    border:0;
+    padding: 0.5rem;
+    color:white;
+    margin:1rem 0;
+    width:auto;
+    cursor:pointer;
+}
+
+#deleteDisplayBtn{
+    background: #343050;
+    border:0;
+    padding: 0.5rem;
+    color:white;
+    margin:1rem 0;
+    width:auto;
+    cursor:pointer;
+}
