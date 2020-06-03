@@ -20,6 +20,9 @@ export class CreateXmlComponent implements OnInit {
         'ClockType':'',
         'Description':'',
         'ClockPreviewType':'',
+        'Preview':this.fb.group({
+          'Version':''
+        }),
         'Settings':this.fb.group({
           'Item':this.fb.array([this.initItem()])
         })

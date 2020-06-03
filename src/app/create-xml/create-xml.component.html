@@ -5,6 +5,9 @@
         <label>Display Name<input formControlName="DisplayName" placeholder="Display Name"></label>
         <label>Clock Type<input formControlName="ClockType" placeholder="Clock Type"></label>
         <label>Description<input formControlName="Description" placeholder="Description"></label>
+        <div formGroupName="Preview">
+            <label>Preview Version<input formControlName="Version" placeholder="Version"></label>
+        </div>
         <label>Clock Preview Type<input formControlName="ClockPreviewType" placeholder="Clock Preview Type"></label>
         
         <div formGroupName="Settings" class="col-md">
@@ -54,4 +57,5 @@
     </div>
     <button id="submitBtn" class="btn btn-info btn-lg btn-block" type="submit">Generate XML</button>
 </form>
+<p>{{ xmlForm.value | json }}</p>
 

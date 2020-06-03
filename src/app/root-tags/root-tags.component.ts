@@ -3,20 +3,37 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-root-tags',
   templateUrl: './root-tags.component.html',
-  styleUrls: ['./root-tags.component.css']
+  styleUrls: ['./root-tags.component.css'],
 })
 export class RootTagsComponent {
+  rootParamsWithoutPackage: any;
+  rootParamsPackageVersion: any;
 
   @Input()
-  rootParamsExceptSettings: any;
+  set rootParamsExceptSettings(rootParamsExceptSettings) {
+    const {
+      Preview: rootParamsPackageVersion,
+      ...rootParamsWithoutPackage
+    } = rootParamsExceptSettings;
+    this.rootParamsPackageVersion = rootParamsPackageVersion;
+    this.rootParamsWithoutPackage = rootParamsWithoutPackage;
+  }
 
   @Output()
   updateRootsHandler = new EventEmitter<any>();
 
   dataChanged(e) {
     this.updateRootsHandler.emit({
-      ...this.rootParamsExceptSettings,
+      ...this.rootParamsWithoutPackage,
+      Package: this.rootParamsPackageVersion,
       [e.target.name]: e.target.value,
+    });
+  }
+
+  rootParamsPackageVersionChange(e) {
+    this.updateRootsHandler.emit({
+      ...this.rootParamsWithoutPackage,
+      Package: { Version: e.target.value },
     });
   }
 }
