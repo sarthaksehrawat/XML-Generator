@@ -6,14 +6,14 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./selection.component.css'],
 })
 export class SelectionComponent {
-  default: any;
-  id: any;
+  _default: any;
+  _id: any;
   displayContent: any;
 
   @Input()
   set selection(selection) {
-    this.default = selection.default;
-    this.id = selection.id;
+    this._default = selection._default;
+    this._id = selection._id;
     this.displayContent = Array.isArray(selection.DisplayContent)
       ? selection.DisplayContent
       : [selection.DisplayContent];
@@ -27,8 +27,8 @@ export class SelectionComponent {
 
   dataChanged(e) {
     this.updateSelection.emit({
-      default: this.default,
-      id: this.id,
+      _default: this._default,
+      _id: this._id,
       DisplayContent: this.displayContent,
       [e.target.name]: e.target.value,
     });
@@ -36,9 +36,9 @@ export class SelectionComponent {
 
   addDisplayContent() {
     this.updateSelection.emit({
-      default: this.default,
-      id: this.id,
-      DisplayContent: this.displayContent.concat({ type: '', content: '' }),
+      _default: this._default,
+      _id: this._id,
+      DisplayContent: this.displayContent.concat({ _type: '', __text: '' }),
     });
   }
 
@@ -53,8 +53,8 @@ export class SelectionComponent {
       [e.target.name]: e.target.value,
     };
     this.updateSelection.emit({
-      default: this.default,
-      id: this.id,
+      _default: this._default,
+      _id: this._id,
       DisplayContent: newDisplayContent,
     });
   }
@@ -62,8 +62,8 @@ export class SelectionComponent {
   deleteDisplayContent(idx) {
     this.displayContent.splice(idx, 1);
     this.updateSelection.emit({
-      default: this.default,
-      id: this.id,
+      _default: this._default,
+      _id: this._id,
       DisplayContent: [...this.displayContent],
     });
   }

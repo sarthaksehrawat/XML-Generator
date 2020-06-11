@@ -7,17 +7,17 @@ import { Component, Input, EventEmitter, Output } from '@angular/core';
 })
 export class SettingsComponent {
   Title: string;
-  name: string;
-  setting_type: string;
-  title_type: string;
+  _name: string;
+  _setting_type: string;
+  _title_type: string;
   selections: any = [];
 
   @Input()
   set setting(setting: any) {
     this.Title = setting.Title;
-    this.name = setting.name;
-    this.setting_type = setting.setting_type;
-    this.title_type = setting.title_type;
+    this._name = setting._name;
+    this._setting_type = setting._setting_type;
+    this._title_type = setting._title_type;
     this.selections = Array.isArray(setting.Selection) ? setting.Selection : [setting.Selection];
   }
 
@@ -30,9 +30,9 @@ export class SettingsComponent {
   changeInput(event) {
     this.updateSettingHandler.emit({
       Title: this.Title,
-      name: this.name,
-      setting_type: this.setting_type,
-      title_type: this.title_type,
+      _name: this._name,
+      _setting_type: this._setting_type,
+      _title_type: this._title_type,
       Selection: this.selections,
       [event.target.name]: event.target.value,
     });
@@ -44,9 +44,9 @@ export class SettingsComponent {
     this.selections[idx] = e;
     this.updateSettingHandler.emit({
       Title: this.Title,
-      name: this.name,
-      setting_type: this.setting_type,
-      title_type: this.title_type,
+      _name: this._name,
+      _setting_type: this._setting_type,
+      _title_type: this._title_type,
       Selection: newSelections,
     });
   }
@@ -54,14 +54,14 @@ export class SettingsComponent {
   addSelection() {
     this.updateSettingHandler.emit({
       Title: this.Title,
-      name: this.name,
-      setting_type: this.setting_type,
-      title_type: this.title_type,
+      _name: this._name,
+      _setting_type: this._setting_type,
+      _title_type: this._title_type,
       Selection: [
         ...this.selections,
         {
           DisplayContent: [],
-          default: '',
+          default: null,
           id: '',
         },
       ],
@@ -76,9 +76,9 @@ export class SettingsComponent {
     this.selections.splice(idx, 1);
     this.updateSettingHandler.emit({
       Title: this.Title,
-      name: this.name,
-      setting_type: this.setting_type,
-      title_type: this.title_type,
+      _name: this._name,
+      _setting_type: this._setting_type,
+      _title_type: this._title_type,
       Selection: [...this.selections],
     });
   }

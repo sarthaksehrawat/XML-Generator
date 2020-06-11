@@ -12,9 +12,9 @@
         type="text"
         class="form-control"
         id="default"
-        name="default"
+        name="_default"
         placeholder="default"
-        value="{{ default }}"
+        value="{{ _default }}"
         (change)="dataChanged($event)"
       />
     </div>
@@ -26,9 +26,9 @@
         type="text"
         class="form-control"
         id="id"
-        name="id"
+        name="_id"
         placeholder="id"
-        value="{{ id }}"
+        value="{{ _id }}"
         (change)="dataChanged($event)"
       />
     </div>
@@ -57,9 +57,9 @@
           type="text"
           class="form-control"
           id="type"
-          name="type"
+          name="_type"
           placeholder="type"
-          value="{{ contentToDisplay.type }}"
+          value="{{ contentToDisplay._type }}"
           (change)="displayContentChange($event, contentIdx)"
         />
       </div>
@@ -71,9 +71,9 @@
           type="text"
           class="form-control"
           id="content"
-          name="content"
+          name="__text"
           placeholder="content"
-          value="{{ contentToDisplay.content }}"
+          value="{{ contentToDisplay.__text }}"
           (change)="displayContentChange($event, contentIdx)"
         />
       </div>

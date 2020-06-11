@@ -1,6 +1,6 @@
 <fieldset class="border p-4 field-sets position-relative">
   <legend class="w-auto legend-with-bordr position-relative">
-    Setting Item
+    Item
   </legend>
   <button type="button" class="close position-absolute delete" (click)="deleteSetting()">
     <span aria-hidden="true">&times;</span>
@@ -12,8 +12,8 @@
         type="text"
         class="form-control"
         placeholder="Name"
-        value="{{ name }}"
-        name="name"
+        value="{{ _name }}"
+        name="_name"
         (change)="changeInput($event)"
       />
     </div>
@@ -34,8 +34,8 @@
         type="text"
         class="form-control"
         placeholder="setting_type"
-        value="{{ setting_type }}"
-        name="setting_type"
+        value="{{ _setting_type }}"
+        name="_setting_type"
         (change)="changeInput($event)"
       />
     </div>
@@ -45,8 +45,8 @@
         type="text"
         class="form-control"
         placeholder="title_type"
-        value="{{ title_type }}"
-        name="title_type"
+        value="{{ _title_type }}"
+        name="_title_type"
         (change)="changeInput($event)"
       />
     </div>

@@ -25,7 +25,7 @@ export class RootTagsComponent {
   dataChanged(e) {
     this.updateRootsHandler.emit({
       ...this.rootParamsWithoutPackage,
-      Package: this.rootParamsPackageVersion,
+      Preview: this.rootParamsPackageVersion,
       [e.target.name]: e.target.value,
     });
   }
@@ -33,7 +33,7 @@ export class RootTagsComponent {
   rootParamsPackageVersionChange(e) {
     this.updateRootsHandler.emit({
       ...this.rootParamsWithoutPackage,
-      Package: { Version: e.target.value },
+      Preview: { _version: e.target.value },
     });
   }
 }

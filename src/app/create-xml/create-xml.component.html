@@ -1,25 +1,28 @@
 <h1 style="font-family: sans-serif;" class="mb-3">XML Generator</h1>
 <form [formGroup]="xmlForm" (ngSubmit)="onSubmit()" class="xmlForm">
-    <div class="form-header col-md" formGroupName="Application">
+    <div class="form-header col-md">
         <label>Package Name<input formControlName="PackageName" placeholder="Package Name"></label>
         <label>Display Name<input formControlName="DisplayName" placeholder="Display Name"></label>
         <label>Clock Type<input formControlName="ClockType" placeholder="Clock Type"></label>
         <label>Description<input formControlName="Description" placeholder="Description"></label>
         <div formGroupName="Preview">
-            <label>Preview Version<input formControlName="Version" placeholder="Version"></label>
+            <div formGroupName="@">
+                <label>Preview Version<input formControlName="version" placeholder="Version"></label>
+                </div>
         </div>
         <label>Clock Preview Type<input formControlName="ClockPreviewType" placeholder="Clock Preview Type"></label>
         
         <div formGroupName="Settings" class="col-md">
             <button type="button" class="btn btn-primary btn-lg" id="addItemBtn" (click)="addItem()">Add Item</button>
             <div formArrayName="Item">
-                <div class="Item" *ngFor="let x of xmlForm['controls'].Application['controls'].Settings['controls'].Item['controls']; let ix=index">
+                <div class="Item" *ngFor="let x of xmlForm['controls'].Settings['controls'].Item['controls']; let ix=index">
                     <div formGroupName="{{ ix }}" class="Item col-md">
                         <h2 style="font-family: sans-serif;" class="mb-3">Item {{ix+1}}</h2>
-                        
-                        <label>Setting Type<input required="true" type="text" formControlName="setting_type" placeholder="Setting Type"></label>
-                        <label>Title Type<input type="text" formControlName="title_type" placeholder="Title Type"></label>
-                        <label>Name<input type="text" formControlName="name" placeholder="Name"></label>
+                        <div formGroupName="@">
+                            <label>Setting Type<input required="true" type="text" formControlName="setting_type" placeholder="Setting Type"></label>
+                            <label>Title Type<input type="text" formControlName="title_type" placeholder="Title Type"></label>
+                            <label>Name<input type="text" formControlName="name" placeholder="Name"></label>
+                        </div>
                         <label>Title<input type="text" formControlName="Title" placeholder="Title"></label>
 
                         <button type="button" class="btn btn-primary btn-lg" id="addSelectionBtn" (click)="addSelection(ix)">Add Selection</button>
@@ -28,18 +31,22 @@
                             <div class="Selection" *ngFor="let y of x['controls'].Selection['controls']; let iy=index">
                                 <div formGroupName="{{ iy }}" class="Selection col-md">
                                     <h3 style="font-family: sans-serif;">Selection {{iy+1}}</h3>
-
-                                    <label>Default<input type="text" formControlName="default" placeholder="Default"></label>
-                                    <label>ID<input type="text" formControlName="id" placeholder="id"></label>
+                                    <div formGroupName="@">
+                                        <label>Default<input type="text" formControlName="default" placeholder="Default"></label>
+                                        <label>ID<input type="text" formControlName="id" placeholder="id"></label>
+                                    </div>
 
                                     <button type="button" class="btn btn-primary btn-lg" id="addDisplayBtn" (click)="addDisplayContent(ix,iy)">Add DisplayContent</button>
                                     <div formArrayName="DisplayContent">
                                         <div class="DisplayContent" *ngFor="let z of y['controls'].DisplayContent['controls']; let iz=index">
                                             <div formGroupName="{{ iz }}" class="DisplayContent col-md">
                                                 <h4 style="font-family: sans-serif;">DisplayContent {{iz+1}}</h4>
+                                                <div formGroupName='@'>
+                                                    <label>Type<input type="text" formControlName="type" placeholder="type"></label>
+                                                </div>
+                                            
+                                                <label>Content<input type="text" formControlName="#" placeholder="Content"></label>
                                                 
-                                                <label>Type<input type="text" formControlName="type" placeholder="type"></label>
-                                                <label>Content<input type="text" formControlName="content" placeholder="Content"></label>
                                                 
                                                 <button type="button" class="btn btn-primary btn-lg" id="deleteDisplayBtn" (click)="deleteDisplayContent(ix,iy,iz)">Delete DisplayContent</button>
                                             </div>

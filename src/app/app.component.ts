@@ -23,7 +23,6 @@ export class AppComponent {
   }
 
   uploadedSchemaHandler(e) {
-    // this could be made input or get the only key from object, but hardcoded as it does't really matter, at the moment
     this.rootTag = 'Application';
     Object.entries(e.Application).forEach((rootEntry: any) => {
       if (rootEntry[0] === 'Settings') {
@@ -58,6 +57,12 @@ export class AppComponent {
     this.settings.splice(idx, 1);
   }
 
+  sanitize(obj) {
+    return JSON.parse(JSON.stringify(obj, (key, value) => {
+      return (value === null ? undefined : value);
+    }));
+  };
+
   onSumit(e) {
     e.preventDefault();
     const preXml = {
@@ -67,9 +72,11 @@ export class AppComponent {
       },
     };
 
+    const res = this.sanitize(preXml)
+
     // @ts-ignore
     const transformer = new X2JS();
-    const data = transformer.json2xml_str(preXml);
+    const data = transformer.json2xml_str(res);
 
     const blob = new Blob([data], { type: 'octet/stream' });
     const url = window.URL.createObjectURL(blob);
