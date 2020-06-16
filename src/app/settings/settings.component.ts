@@ -10,6 +10,8 @@ export class SettingsComponent {
   _name: string;
   _setting_type: string;
   _title_type: string;
+  _focus_image: string;
+  _dim_image: string;
   selections: any = [];
 
   @Input()
@@ -18,6 +20,8 @@ export class SettingsComponent {
     this._name = setting._name;
     this._setting_type = setting._setting_type;
     this._title_type = setting._title_type;
+    this._focus_image = setting._focus_image;
+    this._dim_image = setting._dim_image
     this.selections = Array.isArray(setting.Selection) ? setting.Selection : [setting.Selection];
   }
 
@@ -33,6 +37,8 @@ export class SettingsComponent {
       _name: this._name,
       _setting_type: this._setting_type,
       _title_type: this._title_type,
+      _focus_image: this._focus_image,
+      _dim_image: this._dim_image,
       Selection: this.selections,
       [event.target.name]: event.target.value,
     });
@@ -47,6 +53,8 @@ export class SettingsComponent {
       _name: this._name,
       _setting_type: this._setting_type,
       _title_type: this._title_type,
+      _focus_image: this._focus_image,
+      _dim_image: this._dim_image,
       Selection: newSelections,
     });
   }
@@ -57,6 +65,8 @@ export class SettingsComponent {
       _name: this._name,
       _setting_type: this._setting_type,
       _title_type: this._title_type,
+      _focus_image: this._focus_image,
+      _dim_image: this._dim_image,
       Selection: [
         ...this.selections,
         {
@@ -79,6 +89,8 @@ export class SettingsComponent {
       _name: this._name,
       _setting_type: this._setting_type,
       _title_type: this._title_type,
+      _focus_image: this._focus_image,
+      _dim_image: this._dim_image,
       Selection: [...this.selections],
     });
   }

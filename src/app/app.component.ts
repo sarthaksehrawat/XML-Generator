@@ -49,6 +49,8 @@ export class AppComponent {
       name: '',
       setting_type: '',
       title_type: '',
+      focus_image: '',
+      dim_image: '',
       Selection: [],
     });
   }

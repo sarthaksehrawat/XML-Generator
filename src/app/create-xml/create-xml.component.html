@@ -5,6 +5,7 @@
         <label>Display Name<input formControlName="DisplayName" placeholder="Display Name"></label>
         <label>Clock Type<input formControlName="ClockType" placeholder="Clock Type"></label>
         <label>Description<input formControlName="Description" placeholder="Description"></label>
+        <label>XMLRevisionVersion<input formControlName="XMLRevisionVersion" placeholder="XMLRevisionVersion"></label>
         <div formGroupName="Preview">
             <div formGroupName="@">
                 <label>Preview Version<input formControlName="version" placeholder="Version"></label>
@@ -22,8 +23,15 @@
                             <label>Setting Type<input required="true" type="text" formControlName="setting_type" placeholder="Setting Type"></label>
                             <label>Title Type<input type="text" formControlName="title_type" placeholder="Title Type"></label>
                             <label>Name<input type="text" formControlName="name" placeholder="Name"></label>
+                            <label>Focus Image<input type="text" formControlName="focus_image" placeholder="Focus Image"></label>
+                            <label>Dim Image<input type="text" formControlName="dim_image" placeholder="Dim Image"></label>
                         </div>
-                        <label>Title<input type="text" formControlName="Title" placeholder="Title"></label>
+                        <div formGroupName="Title">
+                            <div formGroupName="@">
+                                <label>Title Number<input type="text" formControlName="number" placeholder="number"></label>
+                            </div>
+                            <label>Title Value<input type="text" formControlName="#" placeholder="Value"></label>
+                        </div>
 
                         <button type="button" class="btn btn-primary btn-lg" id="addSelectionBtn" (click)="addSelection(ix)">Add Selection</button>
                         
@@ -64,5 +72,6 @@
     </div>
     <button id="submitBtn" class="btn btn-info btn-lg btn-block" type="submit">Generate XML</button>
 </form>
+<p>{{ xmlForm.value | json }}</p>
 
 

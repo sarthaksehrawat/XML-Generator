@@ -21,7 +21,8 @@ export class CreateXmlComponent implements OnInit {
         'PackageName':'',
         'DisplayName':'',
         'ClockType':'',
-        'Description':'',
+        'Description':null,
+        'XMLRevisionVersion':'',
         'ClockPreviewType':'',
         'Preview':this.fb.group({
           '@':this.fb.group({
@@ -39,9 +40,16 @@ export class CreateXmlComponent implements OnInit {
       '@':this.fb.group({
         'setting_type':'',
       'title_type':'',
-      'name':''
+      'name':'',
+      'focus_image':null,
+      'dim_image':null
       }),
-      'Title':'',
+      'Title':this.fb.group({
+        '@':this.fb.group({
+          'number':null
+        }),
+        '#':''
+      }),
       'Selection':this.fb.array([])
     });
   }

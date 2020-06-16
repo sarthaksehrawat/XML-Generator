@@ -50,6 +50,28 @@
         (change)="changeInput($event)"
       />
     </div>
+    <div class="col-md-3">
+      <label for="country">focus_image</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="focus_image"
+        value="{{ _focus_image }}"
+        name="_focus_image"
+        (change)="changeInput($event)"
+      />
+    </div>
+    <div class="col-md-3">
+      <label for="country">dim_image</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="dim_image"
+        value="{{ _dim_image }}"
+        name="_dim_image"
+        (change)="changeInput($event)"
+      />
+    </div>
   </div>
   <button type="button" class="btn btn-success btn-sm right" (click)="addSelection()">
     Add Selection
